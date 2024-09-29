@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/LogoFAC.png" type="image/x-icon">
+    <title>Formulário de Produto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Adicione um novo produto!</h2>
+        <form id="product-form" action="http://localhost:8080/produtos" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" maxlength="200" required>
+            </div>
+            <div class="form-group">
+                <label for="avaliacao">Avaliação:</label>
+                <input type="number" class="form-control" id="avaliacao" name="avaliacao" step="0.5" min="0" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="descricaoDetalhada">Descrição Detalhada:</label>
+                <textarea class="form-control" id="descricaoDetalhada" name="descricaoDetalhada" maxlength="2000" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço:</label>
+                <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="qtdEstoque">Quantidade em Estoque:</label>
+                <input type="number" class="form-control" id="qtdEstoque" name="qtdEstoque" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="imagens">Imagens:</label>
+                <input type="file" class="form-control-file" id="imagens" name="imagens" multiple required>
+            </div>
+            <div class="form-group">
+                <label for="imagemPrincipal">Imagem Principal:</label>
+                <input type="number" class="form-control" id="imagemPrincipal" name="imagemPrincipal" min="0" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='listarProduto.html'">Cancelar</button>
+        </form>
+    </div>
+    <script src="./fac/JS/produto.js"></script>
+</body>
+</html>

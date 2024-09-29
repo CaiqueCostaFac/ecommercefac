@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FacApplication<fac>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ecommerce.fac.FacApplication",
+            "projectName": "fac",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

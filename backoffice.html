@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice</title>
+</head>
+<body>
+    <h1> Bem-vindo ao Backoffice </h1>
+    <p> Escolha uma opção: </p>
+    <ul>
+        <li><a href="listarProduto.html"> 1. Listar Produtos </a></li>
+        <li id="admin-option" style="display: none;"><a href="listarUsuario.html"> 2. Listar Usuários </a></li>
+    </ul>
+ 
+    <script>
+        // Verifica se o usuário é administrador e exibe a opção de listar usuários
+        const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+        console.log("Usuário recuperado da sessão:", usuario);
+        if (usuario && usuario.grupo && usuario.grupo === "admin") {
+            document.getElementById("admin-option").style.display = "block";
+        } else {
+            console.log("Usuário não é administrador ou grupo não encontrado:", usuario);
+        }
+    </script>
+</body>
+</html>
